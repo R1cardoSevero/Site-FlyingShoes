@@ -44,7 +44,7 @@ main section h1:after{
     left: 100%;
     top: 50%;
     transform: translate(0%, -50%);
-    height: 4px;
+    height: 3px;
     background-color: rgb(255, 115, 0);
 }
 
@@ -113,6 +113,7 @@ main #sobre h1{
     color: #F5F7FA;
     margin-left: auto;
     padding-right: 4px;
+    padding-left:4px;
     /* animation: coming-right ease;
     animation-timeline: scroll(); 
     animation-range: 0vh 70vh;  */
@@ -130,7 +131,7 @@ main section h1:before{
     position: absolute;
     right: 100%;
     top: 36%;
-    height: 1px;
+    height: 3px;
     background-color: #F5F7FA;
 }
 
