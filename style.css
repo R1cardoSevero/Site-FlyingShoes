@@ -10,6 +10,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 header{
     background-image: url('./images/product-picutre.png');
     height: 100vh;
@@ -18,7 +22,7 @@ header{
     background-position: center;
 }
 
-main section{
+main #beneficios{
     padding: 30px;
 }
 
@@ -28,17 +32,19 @@ main section h1{
     color: rgb(255, 115, 0);
     width: fit-content;
     padding-right: 10px;
+    border-radius: 50px;
     position: relative;
 }
 
 main section h1:after{
     content: '';
     display: block;
-    width: 100svh;
+    width: 100svw;
     position: absolute;
     left: 100%;
-    top: 36%;
-    height: 1px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 4px;
     background-color: rgb(255, 115, 0);
 }
 
@@ -68,7 +74,7 @@ main section ul li::before{
 
 main section p{
     font-family: monospace;
-    padding: 10px 0px;
+    padding: 10px 30px;
     text-indent: 1.5rem;
     font-size: 1rem;
     text-align: justify;
@@ -84,12 +90,28 @@ main section div h1{
 
 main #sobre{
     background-color: rgb(255, 115, 0);
+    height: 50svh;
+    display: flex;
+}
+
+main #sobre img{
+    margin-left: 30px;
+    max-width: 50svw;
+    width: 100%;
+}
+
+main #sobre div{
+    width: 50svw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 main #sobre h1{
     color: #F5F7FA;
     margin-left: auto;
-    padding-left: 10px;
+    padding-right: 4px;
     animation: coming-right ease;
     animation-timeline: scroll(); 
     animation-range: 0svh 70svh; 
@@ -103,7 +125,7 @@ main #sobre h1:after{
 main section h1:before{
     content: '';
     display: block;
-    width: 100svh;
+    width: 100svw;
     position: absolute;
     right: 100%;
     top: 36%;
@@ -156,7 +178,7 @@ footer h5{
     }
 }
 
-@keyframes coming-left {
+@keyframes coming-right {
     from{
         transform:translateX(-100svh);
     }
@@ -165,7 +187,7 @@ footer h5{
     }
 }
 
-@keyframes coming-right {
+@keyframes coming-left {
     from{
         transform:translateX(100svh);
     }
@@ -197,13 +219,45 @@ footer h5{
         background-color: transparent;
         border: 1px solid rgb(255, 115, 0);
         padding: 10px 30px;
-        width: 200px;
+        width: 170px;
         border-radius: 10px;
+        transition: .3s ease-in-out;
     }
     
     header nav ul li a:hover{
         background-color: rgb(255, 115, 0);
         color: white;
+        transition: .3s ease-in-out;
+        scale: 1.2;
+    }
+
+    main section h1{
+        font-size: 4rem;
+    }
+
+    main section p{
+        font-family: sans-serif;
+        font-size: 2rem;
+        line-height: 2.2rem;
+        text-align: justify;
+    }
+
+    #beneficios ul li {
+        font-size: 2rem;    }
+}
+
+@media (min-width: 600px) and (max-width: 1500px) {
+    main #sobre{
+        width: 100svw;
+    }
+
+    main #sobre div{
+        width: 100svw;
+        padding: 0px 50px;
+    }
+
+    main #sobre img{
+        display: none;
     }
 }
 
@@ -230,12 +284,32 @@ footer h5{
         display: inline-block; /* ou block */
         padding: 30px 30px;
         text-decoration: none;
+        position: relative;
         color: #6E6E73;
         font-family: monospace;
         border-bottom: 1px solid #5d5a56;
         width: 100svw;
         background-color: #F5F7FA;
-    }   
+        overflow: hidden;
+        text-align: center;
+    }
+
+    header nav ul li a:before{
+        content: '';
+        position: absolute;
+        background-color: rgb(255, 115, 0);
+        left: -50%;
+        top: -50px;
+        height: 200%;
+        width: 55px;
+        rotate: 34deg;
+        transition: .2s ease-in-out;
+    }
+
+    header nav ul li a:hover::before{
+        left: -10px;
+        transition: .2s ease-in-out;
+    }
 
     #menu-hamburguer{
         display: flex;
@@ -275,6 +349,21 @@ footer h5{
     #menu-hamburguer.open + nav{
         left: 0;
         transition: 0.4s;
+    }
+
+    main #sobre{
+        width: 100svw;
+        height: fit-content;
+        padding: 40px 0px;
+    }
+
+    main #sobre div{
+        width: 100svw;
+        padding: 0px 50px;
+    }
+
+    main #sobre img{
+        display: none;
     }
 
 }
