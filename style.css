@@ -74,7 +74,7 @@ main section ul li::before{
 
 main section p{
     font-family: monospace;
-    padding: 10px 30px;
+    padding: 10px 0px;
     text-indent: 1.5rem;
     font-size: 1rem;
     text-align: justify;
@@ -359,7 +359,7 @@ footer h5{
 
     main #sobre div{
         width: 100svw;
-        padding: 0px 50px;
+        padding: 0px 25px;
     }
 
     main #sobre img{
