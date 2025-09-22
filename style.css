@@ -80,6 +80,16 @@ header div h3:hover{
 
 main #beneficios{
     padding: 30px;
+    padding-bottom: 100px;
+    background-image: url('images/foto-comercial.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+main #beneficios div{
+    background-color: transparent;
+    backdrop-filter: 30px;
 }
 
 main section h1{
@@ -109,11 +119,14 @@ main section ul{
 }
 
 main section ul li{
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.849);
     list-style: none;
     padding: 10px 0px;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
     padding-left: 10px;
     position: relative;
+    color: #F5F7FA;
 }
 
 main section ul li::before{
@@ -180,15 +193,15 @@ main #sobre h1:after{
     display: none;
 }
 
-main section h1:before{
+main #sobre h1:before{
     content: '';
     display: block;
     width: 100vw;
     position: absolute;
     right: 100%;
     top: 36%;
-    height: 3px;
     background-color: #F5F7FA;
+    height: 3px;
 }
 
 main #sobre p{
@@ -197,6 +210,101 @@ main #sobre p{
 
 main #sobre p b{
     color: #dedede;
+}
+
+main #products{
+    background-color: #F5F7FA;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px 0px;
+}
+
+main #products div{
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+main #products div::after{
+    content: '';
+    background-color: #F5F7FA;
+    position: absolute;
+    right: 50px;
+    top: -120px;
+    height: 100%;
+    rotate: -45deg;
+    width: 3px;
+}
+
+main #products div::before{
+    content: '';
+    background-color: rgb(221, 99, 0);
+    position: absolute;
+    right: 50px;
+    top: -130px;
+    height: 100%;
+    rotate: -45deg;
+    width: 3px;
+}
+
+main #products div h3{
+    font-size: 2rem;
+    font-family: monospace;
+    font-weight: 100;
+    padding: 20px;
+}
+
+main #products div button{
+    padding: 20px;
+    color: #F5F7FA;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    margin: 3px;
+    border: none;
+    transition: .2s ease-in-out all;
+    border-radius: 5px;
+}
+
+main #products div button:hover{
+    transition: .2s ease-in-out all;
+    font-size: 1rem;
+    background-color: rgb(255, 115, 0);
+    color: #F5F7FA;
+}
+
+main #products div:nth-child(1){
+    background-image: url('images/tenis-1.png');
+}
+
+main #products div:nth-child(2){
+    background-image: url('images/tenis-2.png');
+}
+
+main #products div:nth-child(3){
+    background-image: url('images/tenis-3.png');
+}
+
+main #products div:nth-child(4){
+    background-image: url('images/tenis-5.png');
+}
+
+main #products i{
+    color: #F5F7FA;
+    background-color: rgb(255, 115, 0);
+    padding: 5px 10px;
+    border-radius: 10px 0px 10px 0px;
 }
 
 footer{
