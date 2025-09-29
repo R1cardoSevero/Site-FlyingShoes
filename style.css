@@ -24,10 +24,11 @@ header{
     overflow: hidden;
 }
 
-header div{
+header nav + div{
     position: absolute;
     bottom: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100vw;
 }
@@ -78,84 +79,6 @@ header div h3:hover{
     }
 }
 
-main #beneficios{
-    padding: 30px;
-    padding-bottom: 100px;
-    background-image: url('images/foto-comercial.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-}
-
-main #beneficios div{
-    background-color: transparent;
-    backdrop-filter: 30px;
-}
-
-main section h1{
-    text-align: left;
-    font-family: font1;
-    color: rgb(255, 115, 0);
-    width: fit-content;
-    padding-right: 10px;
-    border-radius: 50px;
-    position: relative;
-}
-
-main section h1:after{
-    content: '';
-    display: block;
-    width: 100vw;
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translate(0%, -50%);
-    height: 3px;
-    background-color: rgb(255, 115, 0);
-}
-
-main section ul{
-    padding: 20px 0px;
-}
-
-main section ul li{
-    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.849);
-    list-style: none;
-    padding: 10px 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
-    padding-left: 10px;
-    position: relative;
-    color: #F5F7FA;
-}
-
-main section ul li::before{
-    content: '';
-    top: 35%;
-    rotate: 45deg;
-    left: -8px;
-    height: 8px;
-    width: 8px;
-    position: absolute;
-    background-color: rgb(255, 115, 0);
-    animation: rotate 2s linear infinite;
-}
-
-main section p{
-    font-family: monospace;
-    padding: 10px 0px;
-    text-indent: 1.5rem;
-    font-size: 1rem;
-    text-align: justify;
-    line-height: 1.5rem;
-}
-
-/* main section div h1{
-    animation: coming-left ease;
-    animation-timeline: scroll(); 
-    animation-range: 0vh 70vh; 
-    will-change: transform; 
-} */
 
 main #sobre{
     min-height: 100vh;
@@ -165,6 +88,7 @@ main #sobre{
     align-items: center;
     justify-content: space-evenly;
 }
+
 
 main #sobre #descricao{
     h1{
@@ -197,20 +121,140 @@ main #sobre #total-vendas div{
     }
     h2{
         font-family: sans-serif;
-        font-size: 2rem;
+        font-size: 2rem;    
         font-weight: 100;
         padding: 10px;
-    }
+    }   
+}
+
+#parallax {
+    /* Caminho da imagem que você vai usar */
+    background-image: url('images/frente-loja.png');
+    height: 50vh; /* altura do parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-text h1{
+    background-color: transparent;
+    font-size: clamp(3rem,6.5vw,5.3rem);
+    font-weight: 100 !important;
+    color: #ececec;
+    text-shadow: 0px 10px 0px rgba(221, 99, 0, 0.528),
+    0px 30px 0px rgba(221, 99, 0, 0.481),
+    0px 50px 0px rgba(221, 99, 0, 0.314),
+    0px 70px 0px rgba(221, 99, 0, 0.299),
+    0px 90px 0px rgba(221, 99, 0, 0.109),
+    0px -10px 0px rgb(221, 99, 0,528),
+    0px -30px 0px rgba(221, 99, 0, 0.481),
+    0px -50px 0px rgba(221, 99, 0, 0.314),
+    0px -70px 0px rgba(221, 99, 0, 0.299),
+    0px -90px 0px rgba(221, 99, 0, 0.109),
+    0px 0px 30px black;
+}
+
+.parallax-text h1::after{
+    background-color: transparent !important;
+}
+
+/* Sombra estática com fade */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* do topo preto para transparente e volta preto embaixo */
+    background: linear-gradient(to bottom, rgba(221, 99, 0, 0.238) 0%, rgba(0,0,0,0) 50%, rgba(221, 99, 0, 0.238) 100%);
+    z-index: 1;
+}
+
+main #beneficios{
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+main #beneficios div{
+    background-color: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main #beneficios ul{
+    padding: 20px 0px;
+}
+
+object{
+    height: 40px;
+    margin-right: 15px;
+    scale: 1.2;
+    padding-right: 10px;
     
 }
+
+main #beneficios ul li{
+    list-style: none;
+    padding: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    padding-left: 10px;
+    position: relative;
+    color:black;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    img{
+        height: 40px;
+        margin-right: 15px;
+    }
+}
+
+main section h1{
+    text-align: left;
+    font-family: font1;
+    color: rgb(255, 115, 0);
+    width: fit-content;
+    padding-right: 10px;
+    border-radius: 50px;
+    position: relative;
+}
+
+main section h1:after{
+    content: '';
+    display: block;
+    width: 100vw;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 3px;
+    background-color: rgb(255, 115, 0);
+}
+
+
+
+main section p{
+    font-family: monospace;
+    padding: 10px 0px;
+    text-indent: 1.5rem;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
 
 main #products{
     background-color: #F5F7FA;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     padding: 50px 0px;
-    background: linear-gradient(#F5F7FA 50%, rgb(0, 0, 0) 50%);
 }
 
 main #products div{
@@ -431,6 +475,12 @@ footer h5{
 }
 
 @media (max-width: 600px) {
+    header nav + div{
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
     header{
         background-image: url('./images/product-picutre-mobile.png');
         background-size: cover;
@@ -484,6 +534,9 @@ footer h5{
         display: flex;
         flex-direction: column;
         position: absolute;
+        justify-content: space-evenly;
+        height: 40px;
+        width: 40px;
         top: 20px;
         right: 20px;
         cursor: pointer;
@@ -494,8 +547,6 @@ footer h5{
         width: 40px;
         height: 6px;
         background-color: #ebebeb;
-        rotate: 360deg;
-        margin: 3px 0;
         border-radius: 5px;
         transition: 0.4s;
     }
