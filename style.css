@@ -87,6 +87,7 @@ main #sobre{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    background: linear-gradient(to bottom,50% red, 50% black);
 }
 
 
@@ -129,7 +130,7 @@ main #sobre #total-vendas div{
 
 #parallax {
     /* Caminho da imagem que você vai usar */
-    background-image: url('images/frente-loja.png');
+    
     height: 50vh; /* altura do parallax */
     background-attachment: fixed;
     background-position: center;
@@ -171,13 +172,14 @@ main #sobre #total-vendas div{
     width: 100%;
     height: 100%;
     /* do topo preto para transparente e volta preto embaixo */
-    background: linear-gradient(to bottom, rgba(221, 99, 0, 0.238) 0%, rgba(0,0,0,0) 50%, rgba(221, 99, 0, 0.238) 100%);
+    background: linear-gradient(to bottom, rgba(24, 11, 0, 0.685) 0%, rgba(0,0,0,0) 50%, rgba(24, 11, 0, 0.685) 100%);
     z-index: 1;
 }
 
 main #beneficios{
     padding: 30px;
     padding-bottom: 100px;
+    display: flex;
 }
 
 main #beneficios div{
@@ -185,6 +187,13 @@ main #beneficios div{
     border-radius: 20px;
     display: flex;
     justify-content: center;
+    width: 50vw;
+    align-items: center;
+    p{
+        font-size: 2rem;
+        font-weight: 100;
+        padding-right: 30px;
+    }
 }
 
 main #beneficios ul{
@@ -196,11 +205,12 @@ object{
     margin-right: 15px;
     scale: 1.2;
     padding-right: 10px;
-    
+    position: relative;
+    transform: translateY(7px);
 }
 
 main #beneficios ul li{
-    list-style: none;
+    list-style:decimal;
     padding: 20px;
     font-family: sans-serif;
     font-weight: 100;
@@ -208,13 +218,16 @@ main #beneficios ul li{
     position: relative;
     color:black;
     font-weight: 100;
-    display: flex;
     align-items: center;
     img{
         height: 40px;
         margin-right: 15px;
     }
 }
+
+main #beneficios ul li::marker {
+    color: rgb(255, 115, 0);
+  }
 
 main section h1{
     text-align: left;
@@ -253,6 +266,7 @@ main section p{
 main #products{
     background-color: #F5F7FA;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 50px 0px;
 }
@@ -335,6 +349,28 @@ main #products div:nth-child(3){
 
 main #products div:nth-child(4){
     background-image: url('images/tenis-5.png');
+}
+
+main #products div:nth-child(n+5):nth-child(-n+6){
+    position: relative;
+    background-image: url('images/coming-soon.png');
+    ::before{
+        content: 'EM BREVE';
+        text-align: center;
+        display: flex;
+    align-items: center;   /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+        background-color: transparent;
+        backdrop-filter: blur(5px);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        color: #1C1C1E;
+        font-weight: 900;
+        right: 0;
+        z-index: 2;
+        position: absolute;
+    }
 }
 
 main #products i{
@@ -569,6 +605,10 @@ footer h5{
     #menu-hamburguer.open + nav{
         left: 0;
         transition: 0.4s;
+    }
+
+    object{
+        display: none;
     }
 
 
