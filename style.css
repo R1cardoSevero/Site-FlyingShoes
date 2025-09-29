@@ -180,6 +180,9 @@ main #beneficios{
     padding: 30px;
     padding-bottom: 100px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 main #beneficios div{
@@ -187,12 +190,19 @@ main #beneficios div{
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    width: 50vw;
+    min-width: 300px;
+    max-width: 35vw;
     align-items: center;
     p{
-        font-size: 2rem;
+        font-size: clamp(1rem, 2.5vw, 2rem);
         font-weight: 100;
         padding-right: 30px;
+        margin-bottom: 20px;
+    }
+
+    p+h4{
+        font-family: sans-serif;
+        color: rgb(211, 95, 0);
     }
 }
 
@@ -219,6 +229,7 @@ main #beneficios ul li{
     color:black;
     font-weight: 100;
     align-items: center;
+    font-size: clamp(1rem,1.9vw,2rem);
     img{
         height: 40px;
         margin-right: 15px;
@@ -227,7 +238,7 @@ main #beneficios ul li{
 
 main #beneficios ul li::marker {
     color: rgb(255, 115, 0);
-  }
+}
 
 main section h1{
     text-align: left;
