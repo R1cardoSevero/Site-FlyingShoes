@@ -33,3 +33,20 @@ window.addEventListener("scroll", () => {
     });
   }
 });
+
+// Seleciona todos os botões dentro da seção com id "products"
+  const botoes = document.querySelectorAll('#products button');
+
+  // Loop pelos botões encontrados
+  botoes.forEach(botao => {
+    // Cria um elemento <a>
+    const link = document.createElement('a');
+    link.href = 'erro.html';
+    link.textContent = botao.textContent;
+    link.style.textDecoration = 'none';
+    link.style.color = 'inherit';
+
+    // Substitui o conteúdo do botão pelo link
+    botao.textContent = ''; // Limpa o botão
+    botao.appendChild(link); // Coloca o <a> dentro do botão
+  });
