@@ -329,7 +329,6 @@ main #products div h3{
 }
 
 main #products div button{
-    padding: 20px;
     color: #F5F7FA;
     background-color: transparent;
     backdrop-filter: blur(20px);
@@ -337,6 +336,12 @@ main #products div button{
     border: none;
     transition: .2s ease-in-out all;
     border-radius: 5px;
+}
+
+main #products div button a{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px;
 }
 
 main #products div button:hover{
